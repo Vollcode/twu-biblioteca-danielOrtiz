@@ -2,28 +2,35 @@ package com.twu.biblioteca;
 
 public class Book {
 
-    String full_title;
-    String author_name;
-    int year_published;
+    String fullTitle;
+    String authorName;
+    int yearPublished;
+    Boolean checkedOut;
 
-    public Book(String title, String author, int year) {
+    public Book(String title, String author, int year, Boolean check) {
 
-         full_title = title;
-         author_name = author;
-         year_published = year;
+         fullTitle = title;
+         authorName = author;
+         yearPublished = year;
+         checkedOut = check;
     }
 
-    public String getFull_title() {
+    public String getFullTitle() {
 
-        return full_title;
+        return fullTitle;
     }
 
     public String getAuthorName() {
 
-        return author_name;
+        return authorName;
     }
 
     public int getYearPublished() {
-        return year_published;
+
+        return yearPublished;
+    }
+
+    public Boolean getIfCheckedOut() {
+        return checkedOut;
     }
 }
