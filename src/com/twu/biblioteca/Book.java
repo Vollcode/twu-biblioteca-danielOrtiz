@@ -7,7 +7,7 @@ public class Book {
     int yearPublished;
     Boolean checkedOut;
 
-    public Book(String title, String author, int year, Boolean check) {
+    protected Book(String title, String author, int year, Boolean check) {
 
          fullTitle = title;
          authorName = author;
@@ -15,22 +15,30 @@ public class Book {
          checkedOut = check;
     }
 
-    public String getFullTitle() {
+    protected String getFullTitle() {
 
         return fullTitle;
     }
 
-    public String getAuthorName() {
+    protected String getAuthorName() {
 
         return authorName;
     }
 
-    public int getYearPublished() {
+    protected int getYearPublished() {
 
         return yearPublished;
     }
 
-    public Boolean getIfCheckedOut() {
+    protected Boolean getIfCheckedOut() {
         return checkedOut;
+    }
+
+    protected String displayBookDetails() {
+        return ( this.getFullTitle() + " || "+ this.getAuthorName() + " || "+ this.getYearPublished());
+    }
+
+    public void checkOut() {
+        checkedOut = true;
     }
 }

@@ -3,7 +3,6 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 
-import org.junit.BeforeClass;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
@@ -30,7 +29,18 @@ public class BookTest {
     }
 
     @Test
+    public void testBookDisplaysItsContent() {
+        assertEquals(bookie.displayBookDetails(), "bookie || Daniel || 1989");
+    }
+
+    @Test
     public void testBookCanBeCheckedOut() {
         assertEquals(bookie.getIfCheckedOut(), false);
+    }
+
+    @Test
+    public void testCheckOutBook() {
+        bookie.checkOut();
+        assertEquals(bookie.getIfCheckedOut(), true);
     }
 }
